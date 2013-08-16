@@ -53,7 +53,7 @@ if ( @myMatrixes == 0 ) {
 	print STDOUT "ERROR\n";
 	exit 1;
 }
-if ( @myMatrixes > 2 ) { print STDERR "More then 2 matrixes"; exit 1; }
+if ( @myMatrixes > 2 ) { print STDERR "More then 2 matrixes";print STDOUT "ERROR"; exit 1; }
 
 #Multiplication
 my $result               = 0;
@@ -77,7 +77,7 @@ for ( my $i = 0 ; $i < $row_count_matrix1 ; $i++ ) {
 			$result +=
 			  $myMatrixes[0]->[$i]->[$row] * $myMatrixes[1]->[$row]->[$j];
 		}
-		print $result. " ";
+		print STDOUT $result. " ";
 
 	}
 	print STDOUT "\n";
